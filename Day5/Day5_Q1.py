@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
 
-class WebScraper:
+class Web_data():
     def __init__(self, base_url):
         self.base_url = base_url
 
@@ -25,5 +25,5 @@ class WebScraper:
             executor.map(self.fetch_and_save_data, links)
 
 if __name__ == "__main__":
-    scraper = WebScraper("https://notepadfromdas.pythonanywhere.com/pad/share")
-    scraper.scrape()
+    res = Web_data("https://notepadfromdas.pythonanywhere.com/pad/share")
+    res.scrape()
